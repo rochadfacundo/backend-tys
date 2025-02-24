@@ -50,7 +50,7 @@ app.post("/atmCotizar", async (req: Request, res: Response) => {
     </soapenv:Envelope>`;
 
     const startTime = Date.now();
-
+/*
     const response = await axios.post(
         "http://wsatm-dev.atmseguros.com.ar/index.php/soap",
         soapRequest,
@@ -58,7 +58,10 @@ app.post("/atmCotizar", async (req: Request, res: Response) => {
           headers: { "Content-Type": "text/xml" },
           timeout: 30000, // Reducimos timeout a 30s
         }
-      );
+      );*/
+
+  const response = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+
 
     const endTime = Date.now();
     console.log(`✅ Respuesta recibida en ${(endTime - startTime) / 1000} segundos`);
