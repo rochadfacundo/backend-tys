@@ -52,13 +52,13 @@ app.post("/atmCotizar", async (req: Request, res: Response) => {
     const startTime = Date.now();
 
     const response = await axios.post(
-      "http://wsatm-dev.atmseguros.com.ar/index.php/soap",
-      soapRequest,
-      {
-        headers: { "Content-Type": "text/xml" },
-        timeout: 60000, // 60s timeout
-      }
-    );
+        "http://wsatm-dev.atmseguros.com.ar/index.php/soap",
+        soapRequest,
+        {
+          headers: { "Content-Type": "text/xml" },
+          timeout: 30000, // Reducimos timeout a 30s
+        }
+      );
 
     const endTime = Date.now();
     console.log(`✅ Respuesta recibida en ${(endTime - startTime) / 1000} segundos`);
